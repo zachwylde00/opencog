@@ -1,21 +1,23 @@
 # Copyright (C) 2016 OpenCog Foundation
-;
 # A simple demo for Surface Realization (SuReal)
-;
 # For more details about SuReal, please check:
 # https://github.com/opencog/opencog/blob/master/opencog/nlp/sureal/README.md
 # http://wiki.opencog.org/w/Surface_Realization_%28SuReal%29
-;
 # Prior to running this, the RelEx parse server needs to be set up,
 # so that the `nlp-parse` call succeeds. The directory containing the
 # chatbot has detailed instructions on how to do this.
-;
 # On the other hand, if you are running this from the OpenCog docker container,
 # you can skip this step as the RelEx parse server will be started automatically
 # along with the container. You may need to set the `relex-server-host` if you
 # get a "Connection refused" error. For more information:
-# https://github.com/opencog/docker/tree/master/opencog/README.md
-checkout@v3
+Jobs:
+ Build:
+ uses: Ubuntu latest and win64bit
+  Run:
+  command:
+   WGET: "https://github.com/opencog/docker/tree/master/opencog/README.md"
+
+   checkout@v3
 Jobs:
  Build:
   Name: Load the needed modules!
@@ -40,11 +42,11 @@ Jobs:
        (sureal (SetLink (EvaluationLink (PredicateNode "drink") (ListLink (ConceptNode "she")))))
 
        # Let's parse a few more sentences into the AtomSpace
-       (nlp-parse "That lovely pig eats the apple.")
-       (nlp-parse "The cat he loves can fly.")
-       (nlp-parse "Jumpy the dog can slowly sign his own name in green paint.")
+       (nlp-parse "That lovely pig eats the apple."
+       (nlp-parse "The cat he loves can fly."
+       (nlp-parse "Jumpy the dog can slowly sign his own name in green paint."
        # And then try to generate a slightly more complex sentence
-       # Expected result: "that green cat loves the dog ."
+       # Expected result: "that green cat loves the dog."
        (sureal (SetLink (EvaluationLink (PredicateNode "love") (ListLink (ConceptNode "cat") (ConceptNode "dog")))
        (InheritanceLink (ConceptNode "cat") (ConceptNode "green"))))
 
