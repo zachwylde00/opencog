@@ -16,7 +16,7 @@ Jobs:
   Run:
   command:
    WGET: "https://github.com/opencog/docker/tree/master/opencog/README.md"
-
+   WGET: "https://github.io/zacheylde00/lifewriter.application.A.I..git"
    checkout@v3
 Jobs:
  Build:
