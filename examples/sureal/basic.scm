@@ -1,8 +1,9 @@
-# Copyright (C) 2016 OpenCog Foundation
+# Template from Copyright (C) 2016 OpenCog Foundation
 # A simple demo for Surface Realization (SuReal)
 # For more details about SuReal, please check:
 # https://github.com/opencog/opencog/blob/master/opencog/nlp/sureal/README.md
 # http://wiki.opencog.org/w/Surface_Realization_%28SuReal%29
+# files uses autonomous-continous-integration_to_self-upgrade_as_main-function
 # Prior to running this, the RelEx parse server needs to be set up,
 # so that the `nlp-parse` call succeeds. The directory containing the
 # chatbot has detailed instructions on how to do this.
